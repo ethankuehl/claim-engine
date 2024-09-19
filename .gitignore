@@ -44,4 +44,4 @@
 ## S/MIME message
 *.smime
 
-.vscode
+~/stampd-claiim-engine/.vscode
