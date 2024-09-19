@@ -1,0 +1,44 @@
+[package]
+name = "handler"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+c2pa = { version = "0.28.4", features = ["file_io", "add_thumbnails", "json_schema"] }
+tokio = { version = "1", features = ["rt", "macros", "rt-multi-thread"] }
+rustls = "0.21.7"
+actix-multipart = "0.6"
+actix-multipart-derive = "0.6"
+actix-web = "4.4"
+env_logger = "0.10"
+futures-util = { version = "0.3.17", default-features = false, features = ["std"] }
+sanitize-filename = "0.5.0"
+futures = "0.3.29"
+serde = "1.0.192"
+reqwest = { version = "0.11.22", features = ["blocking", "multipart"] }
+datetime = "0.5.2"
+anyhow = "1.0.75"
+blake3 = "1.5.0"
+chrono = "0.4.31"
+future-utils = "0.12.1"
+blocking = "1.5.1"
+async-fs = "2.1.0"
+mime = "0.3.17"
+serde_json = "1.0.108"
+multipart = "0.18.0"
+pem = "3.0.2"
+openssl = "0.10.56"
+actix-files = "0.6.2"
+log = "0.4.20"
+actix-web-multipart-file = "0.1.1"
+warp = "0.3.6"
+uuid = "1.6.1"
+azure_identity = "0.18.0"
+azure_security_keyvault = "0.18.0"
+azure_core = "0.18.0"
+async-std = "1.12.0"
+futures-retry = "0.6.0"
+retry = "2.0.0"
+mime_classifier = "0.0.1"

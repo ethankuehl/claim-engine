@@ -1,0 +1,57 @@
+#[derive(Deserialize)]
+struct manifest{
+    // #[serde(rename = "urn:uuid:984cdf10-94ef-45db-b6af-705b7afb5386")]
+    uuid: String,
+    data: ClaimData
+}
+
+#[derive(Deserialize)]
+struct ClaimData {
+    claim_generator: String,
+    title: String,
+    format: String,
+    instance_id: String,
+    thumbnail: Thumbnail,
+    ingredients: Vec<Ingredient>,
+    assertions: Vec<Assertion>,
+    signature_info: SignatureInfo,
+    label: String,
+}
+
+#[derive(Deserialize)]
+struct Thumbnail {
+    format: String,
+    identifier: String,
+}
+
+#[derive(Serialize, Deserialize)]
+pub struct Ingredient {
+    pub title: String,
+    pub format: String,
+    pub instance_id: String,
+    pub relationship: String,
+    pub active_manifest: String,
+}
+    
+#[derive(Deserialize)]
+struct Assertion {
+    label: String,
+    #[serde(rename = "data")]
+    data: serde_json::Value,
+    kind: String,
+}
+
+#[derive(Deserialize)]
+struct SignatureInfo {
+    issuer: String,
+    cert_serial_number: String,
+}
+
+// #[derive(Serialize, Deserialize)]
+
+
+#[derive(Deserialize, Serialize)]
+pub struct C2paManifest {
+    pub active_manifest: Option<String>,
+    pub manifests: Option<serde_json::Value>,
+}
